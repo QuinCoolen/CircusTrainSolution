@@ -46,7 +46,7 @@ namespace Circustrain.classes
 
     public void PrintWagon()
     {
-      Console.WriteLine($"Wagon with {Animals.Count} animals");
+      Console.WriteLine($"Wagon with {Animals.Count} animals {FreeSpace} free space");
       foreach (var animal in Animals)
       {
         Console.WriteLine($"- {animal.GetName()}");

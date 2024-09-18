@@ -15,7 +15,7 @@ namespace Circustrain.classes
     public Animal(string name, int size, AnimalDiet diet)
     {
       Name = name;
-      Size = size;
+      Size = (AnimalSize)size;
       Diet = diet;
     }
 
