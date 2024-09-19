@@ -24,9 +24,9 @@ namespace Circustrain.classes
       return Name;
     }
 
-    public int GetSize()
+    public AnimalSize GetSize()
     {
-      return (int)Size;
+      return Size;
     }
 
     public AnimalDiet GetDiet()
@@ -36,17 +36,34 @@ namespace Circustrain.classes
 
     public bool CanBeInSameWagon(Animal animal)
     {
-      if (Diet == AnimalDiet.Carnivore && animal.Size <= Size)
-      {
-        return false;
-      }
+        if (Diet == AnimalDiet.Carnivore && animal.Diet == AnimalDiet.Carnivore)
+        {
+            return false;
+        }
 
-      if (animal.Diet == AnimalDiet.Carnivore && animal.Size >= Size)
-      {
-        return false;
-      }
+        if (Diet == AnimalDiet.Carnivore && animal.GetSize() <= GetSize())
+        {
+            return false;
+        }
 
-      return true;
+        if (animal.Diet == AnimalDiet.Carnivore && animal.GetSize() >= GetSize())
+        {
+            return false;
+        }
+
+        // if (Diet == AnimalDiet.Carnivore && GetSize() <= AnimalSize.Medium && 
+        //     animal.GetSize() == AnimalSize.Large && animal.Diet == AnimalDiet.Herbivore)
+        // {
+        //     return true;
+        // }
+
+        // if (Diet == AnimalDiet.Herbivore && animal.Diet == AnimalDiet.Herbivore &&
+        //     GetSize() == AnimalSize.Large && animal.GetSize() == AnimalSize.Large)
+        // {
+        //     return false;
+        // }
+
+        return true;
     }
   }
 }

@@ -19,7 +19,7 @@ namespace Circustrain.classes
       if (CanAddAnimal(animal))
       {
         Animals.Add(animal);
-        FreeSpace -= animal.GetSize();
+        FreeSpace -= (int)animal.GetSize();
         return true;
       }
 
@@ -28,7 +28,7 @@ namespace Circustrain.classes
 
     private bool CanAddAnimal(Animal animal)
     {
-      if (FreeSpace < animal.GetSize())
+      if (FreeSpace < (int)animal.GetSize())
       {
         return false;
       }

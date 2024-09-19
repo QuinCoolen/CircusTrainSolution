@@ -16,7 +16,7 @@ namespace Circustrain.classes
 
     public void FillTrain(List<Animal> animals)
     {
-      animals.Sort((a, b) => b.GetSize().CompareTo(a.GetSize()));
+      animals.Sort((b, a) => b.GetDiet().CompareTo(a.GetDiet()));
       
       foreach (var animal in animals)
       {
